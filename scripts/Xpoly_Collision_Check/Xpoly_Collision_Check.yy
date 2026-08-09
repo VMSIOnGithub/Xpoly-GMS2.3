@@ -6,7 +6,7 @@
     "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Xpoly_Draw_Buffered_Strokes",
+  "name": "Xpoly_Collision_Check",
   "tags": [],
   "resourceType": "GMScript",
 }

@@ -1,20 +1,17 @@
 
-function XPoly_Booleanation(objs,stroke_width,miter_limit){
+function XPoly_Booleanation(objs){
 	
 	if(!Xpoly_Is_Initialized()) return;
 	buffer_seek(global.buf_in,buffer_seek_start,0);
 	buffer_write(global.buf_in,buffer_u32, global.buf_cap)  //[buffer capacity]
 	buffer_write(global.buf_in,buffer_u32, array_length(objs) ); //  [polygon count]
-	buffer_write(global.buf_in,buffer_f32, stroke_width ); //  [stroke width]
-	buffer_write(global.buf_in,buffer_f32, miter_limit ); //  [miter_limit]
-	
 	
 	for(var i=0;i<array_length(objs);i++){
 		// [pos.x] [pos.y] [rot.deg] [scale.x] [scale.y] [org.x] [org.y] [PointCount] PointCount*[Points]
 		var obj_current = objs[i];
 		buffer_write(global.buf_in,buffer_u32, obj_current.operation) //[operation]
 		buffer_write(global.buf_in,buffer_f32, obj_current.x) //[pos_x]
-		buffer_write(global.buf_in,buffer_f32, obj_current.x) //[pos_y]
+		buffer_write(global.buf_in,buffer_f32, obj_current.y) //[pos_y]
 		buffer_write(global.buf_in,buffer_f32, obj_current.image_angle) //[rot_deg]
 		buffer_write(global.buf_in,buffer_f32, obj_current.image_xscale) //[scale_x]
 		buffer_write(global.buf_in,buffer_f32, obj_current.image_yscale) //[scale_y]
@@ -26,13 +23,9 @@ function XPoly_Booleanation(objs,stroke_width,miter_limit){
 			buffer_write(global.buf_in,buffer_f32,obj_current.vertices[j])
 		}
 	}
-	
-	Xpoly_Clear_Buffered_Polygons()
-	Xpoly_Clear_Buffered_Strokes()
-	
+
 	booleanation(
 		buffer_get_address(global.buf_in),
-		buffer_get_address(global.buf_out),
-		buffer_get_address(global.buf_out_stroke)
+		buffer_get_address(global.buf_out)
 	)
 }

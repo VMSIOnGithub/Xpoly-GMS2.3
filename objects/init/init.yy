@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "icon_util",
-    "path": "sprites/icon_util/icon_util.yy",
+    "name": "spr_icon",
+    "path": "sprites/spr_icon/spr_icon.yy",
   },
   "solid": false,
   "visible": false,

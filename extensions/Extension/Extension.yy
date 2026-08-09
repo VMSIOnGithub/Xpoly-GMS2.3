@@ -28,18 +28,22 @@
         {"externalName":"booleanation","kind":1,"help":"","hidden":false,"returnType":2,"argCount":0,"args":[
             1,
             1,
-            1,
           ],"resourceVersion":"1.0","name":"booleanation","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"triangulationInflated","kind":1,"help":"","hidden":false,"returnType":2,"argCount":0,"args":[
             1,
             1,
           ],"resourceVersion":"1.0","name":"triangulationInflated","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"collisionCheck","kind":1,"help":"","hidden":false,"returnType":2,"argCount":0,"args":[
+            1,
+            1,
+          ],"resourceVersion":"1.0","name":"collisionCheck","tags":[],"resourceType":"GMExtensionFunction",},
       ],"constants":[],"ProxyFiles":[],"copyToTargets":-1,"order":[
         {"name":"debug_logger_toggle","path":"extensions/Extension/Extension.yy",},
         {"name":"debug_logger_push","path":"extensions/Extension/Extension.yy",},
         {"name":"triangulation","path":"extensions/Extension/Extension.yy",},
         {"name":"booleanation","path":"extensions/Extension/Extension.yy",},
         {"name":"triangulationInflated","path":"extensions/Extension/Extension.yy",},
+        {"name":"collisionCheck","path":"extensions/Extension/Extension.yy",},
       ],"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMExtensionFile",},
   ],
   "classname": "",

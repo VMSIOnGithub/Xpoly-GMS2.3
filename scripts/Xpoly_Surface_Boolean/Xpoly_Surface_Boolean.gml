@@ -58,28 +58,6 @@ function Xpoly_Surface_Boolean(surface1, surface2, surface_helper, operation)
             break;
         }
 
-        // ============================================================
-        // XOR：异或 —— 两者不同时为白色才为白色
-        // 策略：result = surface1 + surface2 - 2 * (surface1 * surface2)
-        //       即 (surface1 ∪ surface2) - (surface1 ∩ surface2)
-        // ============================================================
-        case XPOLY_OPERATION_XOR:
-        {
-			surface_set_target(surface_helper);
-			draw_clear_alpha(c_white,0)
-            draw_surface(surface1, 0, 0);
-            surface_reset_target();
-			
-            surface_set_target(surface1);
-			draw_clear_alpha(c_white,0)
-            shader_set(shd_blend_xor);
-			texture_set_stage(shader_get_sampler_index(shd_blend_xor, "surface1"), surface_get_texture(surface_helper));
-			texture_set_stage(shader_get_sampler_index(shd_blend_xor, "surface2"), surface_get_texture(surface2));
-			draw_surface(surface_helper, 0, 0); 
-			shader_reset();
-            surface_reset_target();
-        }
-
         default:
         {
             // 未知操作，不做处理
