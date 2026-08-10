@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function Xpoly_Collision_Check(_x,_y,_radius,gravity_angle,foot_length){
+function Xpoly_Collision_Check(_x,_y,_radius,gravity_angle){
 	
 	
 	if(!Xpoly_Is_Initialized()) return;
@@ -9,7 +9,7 @@ function Xpoly_Collision_Check(_x,_y,_radius,gravity_angle,foot_length){
 	buffer_write(global.buf_in,buffer_f32,_x)
 	buffer_write(global.buf_in,buffer_f32,_y)
 	buffer_write(global.buf_in,buffer_f32,_radius)
-	
+	buffer_write(global.buf_in,buffer_f32,gravity_angle)
 	
 	
 	buffer_seek(global.buf_out,buffer_seek_start,0)
@@ -24,9 +24,12 @@ function Xpoly_Collision_Check(_x,_y,_radius,gravity_angle,foot_length){
 	
 	var is_inside =buffer_read(global.buf_out,buffer_u32)
 	var is_slide = buffer_read(global.buf_out,buffer_u32)
+	var touching_ceiling =buffer_read(global.buf_out,buffer_u32)
+	var touching_floor = buffer_read(global.buf_out,buffer_u32)
 	var new_x =buffer_read(global.buf_out,buffer_f32)
 	var new_y =buffer_read(global.buf_out,buffer_f32)
-	var result = [is_inside, is_slide, new_x, new_y];
+	var result = [is_inside, is_slide, touching_ceiling, touching_floor, new_x, new_y];
+	//newX,newY是灵魂被钳制进框的位置
 	
 	return result;
 }
