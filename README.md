@@ -234,7 +234,7 @@ function Xpoly_Draw(points,pos_x,pos_y,rot_deg,scl_x,scl_y,org_x,org_y,is_debug=
 ### 碰撞检测
 `Xpoly_Collision_Check(_x,_y,_radius,gravity_angle)`
 支持任意重力方向，可得到是否碰到天花板，地板等等，详情请自行阅读示例。
-
+请注意Xpoly_Collision_Check，必须在调用Xpoly_Booleanation，计算出最终边界后才能使用。
 
 | 参数 | 类型 | 说明 |
 |------|------|------|
