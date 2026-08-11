@@ -2,7 +2,7 @@
 
 # XPoly - GMS2 多边形运算扩展
 
-基于 Clipper2 库的 GameMaker Studio 2 原生 DLL 扩展，提供高性能的多边形布尔运算、三角剖分、碰撞检测、仿射变换和膨胀/偏置功能。
+基于 Clipper2 库的 GameMaker Studio 2 原生 DLL 扩展，提供高性能的多边形布尔运算、三角剖分、碰撞检测、仿射变换和膨胀/偏置功能。为制作undertale-like游戏提供支持。
 
 ## 目录
 
@@ -78,6 +78,7 @@ XPoly_Init();
 ## 基础使用
 在场景中创建polygon物体
 设置polygon的vertices顶点数组，使用prio变量可以影响不同polygon物体的布尔优先级。
+vertices格式: [x1,y1,x2,y2,x3,y3....]
 polygon物体的位置，缩放，旋转会改变最终渲染出来的多边形以及布尔的结果，无需手动计算。
 polygon_manager会在游戏中自动收集所有的polygon物体，渲染，并执行布尔运算
 详细请自行阅读实例。
