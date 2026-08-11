@@ -51,7 +51,7 @@
 | `XPoly_Booleanation` | 多边形布尔运算 |
 | `Xpoly_Surface_Boolean` | 布尔运算结果写入 Surface |
 | `Xpoly_Collision_Check` | 碰撞检测 |
-| `Xpoly_Draw` | 执行多边形交集/合并并绘制 |
+| `Xpoly_Draw` | 多边形绘制 |
 | `Xpoly_Draw_Inflated` | 绘制膨胀后的多边形 |
 | `Xpoly_Draw_Buffered_Polygons` | 绘制缓冲中的多边形 |
 | `Xpoly_Clear_Buffered_Polygons` | 清空缓冲区 |
