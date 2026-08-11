@@ -5,8 +5,8 @@ objs = []
 
 surf_outset_a = -1;
 surf_outset_b = -1;
-
 surf_helper = -1;
+surf_pending_blacks = -1;
 
 draw_debug_enabled = false
 stroke_width = 5.0;
@@ -14,6 +14,11 @@ miter_limit = 6.0;
 
 col_strokes = c_white;
 col_blacks = c_black;
+col_strokes_alpha = 1
+col_blacks_alpha = 1
+
+
+
 
 
 function draw_strokes(){
@@ -47,7 +52,9 @@ function draw_strokes(){
 		Xpoly_Surface_Boolean(surf_outset_a,surf_outset_b,surf_helper,cur_obj.operation)
 	}
 	
-	draw_surface_ext(surf_outset_a,0,0,1,1,0,col_strokes,1);
+	//cut out blacks from inflated polygons, and draw.
+	Xpoly_Surface_Boolean(surf_outset_a,surf_pending_blacks,surf_helper,XPOLY_OPERATION_DIFFERENCE)
+	draw_surface_ext(surf_outset_a,0,0,1,1,0,col_strokes,col_strokes_alpha);
 }
 
 
@@ -80,6 +87,12 @@ function draw_blacks(){
 		surface_reset_target();
 		Xpoly_Surface_Boolean(surf_outset_a,surf_outset_b,surf_helper,cur_obj.operation)
 	}
+	//store blacks into @surf_outset_a,so that when drawing strokes,the inside regions can be cutout.
+	surface_set_target(surf_pending_blacks)
+	draw_clear_alpha(c_white,0)
+	draw_surface_ext(surf_outset_a,0,0,1,1,0,c_white,1);
+	surface_reset_target();
 	
-	draw_surface_ext(surf_outset_a,0,0,1,1,0,col_blacks,1.0);
+	//draws
+	draw_surface_ext(surf_pending_blacks,0,0,1,1,0,col_blacks,col_blacks_alpha);
 }
