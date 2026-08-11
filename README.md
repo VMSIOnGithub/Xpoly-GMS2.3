@@ -91,20 +91,16 @@ XPoly_Init();
 
 这些函数帮助创建标准的几何形状，返回 GMS2 顶点数组[x1,x2,y1,y2....]。
 
-#### `Shape_Create_Circle(cx, cy, radius, segments)`
+#### `Shape_Create_Circle(radius, resolution)`
 
 创建一个圆形/正多边形的顶点列表。
 
 | 参数 | 类型 | 说明 |
 |------|------|------|
-| `cx` | real | 圆心 X 坐标 |
-| `cy` | real | 圆心 Y 坐标 |
 | `radius` | real | 半径 |
-| `segments` | real | 分段数（越大越圆滑） |
+| `resolution` | real | 分段数（越大越圆滑） |
 
-```gml
-var circle = Shape_Create_Circle(400, 300, 100, 32);
-```
+
 #### `Shape_Create_Rect(w,h)`
 
 输入长宽创建一个矩形。
