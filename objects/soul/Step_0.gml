@@ -51,5 +51,3 @@ else if(soul_mode == SOUL_BLUE){
 	
 }
 
-x += soul_velocity[0];
-y += soul_velocity[1];

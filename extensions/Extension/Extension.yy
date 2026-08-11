@@ -11,7 +11,7 @@
   "license": "",
   "description": "",
   "helpfile": "",
-  "iosProps": true,
+  "iosProps": false,
   "tvosProps": false,
   "androidProps": false,
   "installdir": "",
