@@ -55,10 +55,10 @@
 | `Xpoly_Draw_Inflated` | 绘制膨胀后的多边形 |
 | `Xpoly_Draw_Buffered_Polygons` | 绘制缓冲中的多边形 |
 | `Xpoly_Clear_Buffered_Polygons` | 清空缓冲区 |
-| `Shape_Create_Circle` | 创建圆形顶点缓冲区 |
-| `Shape_Create_Rect` | 创建矩形顶点缓冲区 |
-| `Shape_Create_Rect_Rounded` | 创建圆角矩形顶点缓冲区 |
-| `Shape_Create_Star` | 创建星形顶点缓冲区 |
+| `Shape_Create_Circle` | 创建圆形顶点数组 |
+| `Shape_Create_Rect` | 创建矩形顶点数组 |
+| `Shape_Create_Rect_Rounded` | 创建圆角顶点数组 |
+| `Shape_Create_Star` | 创建星形顶点数组 |
 
 ### 3. 创建 init 对象
 
