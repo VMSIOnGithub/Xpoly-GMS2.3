@@ -16,12 +16,12 @@
   "androidProps": false,
   "installdir": "",
   "files": [
-    {"filename":"DllValidation.dll","origname":"","init":"","final":"","kind":1,"uncompress":false,"functions":[
+    {"filename":"xpoly.dll","origname":"","init":"","final":"","kind":1,"uncompress":false,"functions":[
         {"externalName":"debug_logger_toggle","kind":1,"help":"","hidden":false,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"debug_logger_toggle","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"debug_logger_push","kind":1,"help":"","hidden":false,"returnType":2,"argCount":0,"args":[
             1,
           ],"resourceVersion":"1.0","name":"debug_logger_push","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"","kind":1,"help":"","hidden":false,"returnType":2,"argCount":0,"args":[
+        {"externalName":"triangulation","kind":1,"help":"","hidden":false,"returnType":2,"argCount":0,"args":[
             1,
             1,
           ],"resourceVersion":"1.0","name":"triangulation","tags":[],"resourceType":"GMExtensionFunction",},
@@ -38,12 +38,12 @@
             1,
           ],"resourceVersion":"1.0","name":"collisionCheck","tags":[],"resourceType":"GMExtensionFunction",},
       ],"constants":[],"ProxyFiles":[],"copyToTargets":-1,"order":[
-        {"name":"debug_logger_toggle","path":"extensions/Extension/Extension.yy",},
-        {"name":"debug_logger_push","path":"extensions/Extension/Extension.yy",},
-        {"name":"triangulation","path":"extensions/Extension/Extension.yy",},
-        {"name":"booleanation","path":"extensions/Extension/Extension.yy",},
-        {"name":"triangulationInflated","path":"extensions/Extension/Extension.yy",},
-        {"name":"collisionCheck","path":"extensions/Extension/Extension.yy",},
+        {"name":"debug_logger_toggle","path":"extensions/Extension_Xpoly/Extension_Xpoly.yy",},
+        {"name":"debug_logger_push","path":"extensions/Extension_Xpoly/Extension_Xpoly.yy",},
+        {"name":"triangulation","path":"extensions/Extension_Xpoly/Extension_Xpoly.yy",},
+        {"name":"booleanation","path":"extensions/Extension_Xpoly/Extension_Xpoly.yy",},
+        {"name":"triangulationInflated","path":"extensions/Extension_Xpoly/Extension_Xpoly.yy",},
+        {"name":"collisionCheck","path":"extensions/Extension_Xpoly/Extension_Xpoly.yy",},
       ],"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMExtensionFile",},
   ],
   "classname": "",
@@ -84,7 +84,7 @@
     "path": "folders/Extensions.yy",
   },
   "resourceVersion": "1.2",
-  "name": "Extension",
+  "name": "Extension_Xpoly",
   "tags": [],
   "resourceType": "GMExtension",
 }
