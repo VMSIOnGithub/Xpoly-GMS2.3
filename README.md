@@ -229,8 +229,7 @@ function Xpoly_Draw(points,pos_x,pos_y,rot_deg,scl_x,scl_y,org_x,org_y,is_debug=
 }
 
 ```
-
-
+<img width="642" height="512" alt="image" src="https://github.com/user-attachments/assets/da5a442f-352f-4b93-91c6-bdbc18df444c" />
 
 ### 碰撞检测
 `Xpoly_Collision_Check(_x,_y,_radius,gravity_angle)`
