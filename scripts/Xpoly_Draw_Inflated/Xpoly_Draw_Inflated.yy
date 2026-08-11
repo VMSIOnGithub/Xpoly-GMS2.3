@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "Xpoly",
+    "path": "folders/Scripts/Xpoly.yy",
   },
   "resourceVersion": "1.0",
   "name": "Xpoly_Draw_Inflated",

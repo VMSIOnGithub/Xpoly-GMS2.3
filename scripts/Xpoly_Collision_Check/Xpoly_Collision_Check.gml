@@ -1,5 +1,7 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+//这个函数读取Booleanation产生的合法边界，输入灵魂的位置，碰撞半径（是的，灵魂是圆形的碰撞范围），重力角度
+//返回  本帧(_x,_y)是否出框(is_inside)，
+//	   本次出框是普通的撞墙(AKA slide)，还是强制被卡到了最近的合法位置(is_slide),
+//     被挤回框的新位置，天花板地板检测...
 function Xpoly_Collision_Check(_x,_y,_radius,gravity_angle){
 	
 	

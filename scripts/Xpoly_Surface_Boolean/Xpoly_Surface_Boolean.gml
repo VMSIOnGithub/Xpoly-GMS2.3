@@ -1,4 +1,4 @@
-
+//这个函数为surface提供布尔运算
 function Xpoly_Surface_Boolean(surface1, surface2, surface_helper, operation)
 {
     // ---- 参数合法性检查 ----

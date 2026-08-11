@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Internal",
-    "path": "folders/Scripts/Xpoly/Internal.yy",
+    "name": "Shape",
+    "path": "folders/Scripts/Shape.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Xpoly_Draw_Buffered_Polygons",
+  "name": "Shape_Create_Star",
   "tags": [],
   "resourceType": "GMScript",
 }

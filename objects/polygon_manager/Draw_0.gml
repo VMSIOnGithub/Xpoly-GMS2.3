@@ -14,9 +14,6 @@ if(array_length(objs)>=1){
 	draw_strokes();
 	draw_blacks();
 	
-	
-	
-	
 }
 
 

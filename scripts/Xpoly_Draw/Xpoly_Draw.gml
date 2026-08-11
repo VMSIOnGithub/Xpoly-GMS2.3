@@ -1,5 +1,4 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+//这个函数绘制输入的多边形
 function Xpoly_Draw(points,pos_x,pos_y,rot_deg,scl_x,scl_y,org_x,org_y,is_debug=false,col_fill=c_white,col_debug=c_red){
 	
 	if(!Xpoly_Is_Initialized()) return;

@@ -1,5 +1,4 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+//这个函数将对输入的多边形膨胀后，进行绘制。用于绘制边框。
 function Xpoly_Draw_Inflated(points,
 	pos_x, pos_y,
 	rot_deg,

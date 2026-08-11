@@ -1,4 +1,4 @@
-vertices = [100,100,100,-100,-100,-100,-100,100]
+vertices = Shape_Create_Rect(200,200)
 prio = 3
 operation = XPOLY_OPERATION_DIFFERENCE
 time = 0
