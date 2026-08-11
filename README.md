@@ -11,11 +11,11 @@
 - [API 参考](#api-参考)
   - [初始化](#初始化)
   - [形状创建辅助函数](#形状创建辅助函数)
+  - [绘制函数](#绘制函数)
   - [布尔运算](#布尔运算)
   - [三角剖分](#三角剖分)
   - [碰撞检测](#碰撞检测)
   - [仿射变换](#仿射变换)
-  - [绘制函数](#绘制函数)
   - [调试工具](#调试工具)
 
 
@@ -57,13 +57,9 @@
 | `Xpoly_Surface_Boolean` | 布尔运算结果写入 Surface |
 | `Xpoly_Collision_Check` | 碰撞检测 |
 | `Xpoly_Draw` | 执行多边形交集/合并并绘制 |
-| `Xpoly_Draw_Buffered_Polygons` | 绘制缓冲的多边形 |
-| `Xpoly_Clear_Buffered_Polygons` | 清空缓冲区 |
-| `Xpoly_Draw_Debug_Segment` | 绘制调试线段 |
 | `Xpoly_Draw_Inflated` | 绘制膨胀后的多边形 |
-| `Xpoly_Draw_Triangulated` | 绘制三角剖分结果 |
-| `Xpoly_Draw_Triangulated_Inflated` | 绘制膨胀并三角剖分的结果 |
-| `Xpoly_Debug_Log_Buffer` | 输出缓冲区调试信息 |
+| `Xpoly_Draw_Buffered_Polygons` | 绘制缓冲中的多边形 |
+| `Xpoly_Clear_Buffered_Polygons` | 清空缓冲区 |
 | `Shape_Create_Circle` | 创建圆形顶点缓冲区 |
 | `Shape_Create_Rect` | 创建矩形顶点缓冲区 |
 | `Shape_Create_Rect_Rounded` | 创建圆角矩形顶点缓冲区 |
@@ -110,8 +106,6 @@ XPoly_Init();
 
 输入上下左右的偏移量，创建一个矩形。
 
-
-
 #### `Shape_Create_Rect_Rounded(w, h, r, segments)`
 
 创建一个圆角矩形。
@@ -132,3 +126,114 @@ XPoly_Init();
 | `tip_count` | real | 角的数量 |
 
 ---
+### 绘制函数
+#### `Xpoly_Draw(points,pos_x,pos_y,rot_deg,scl_x,scl_y,org_x,org_y,is_debug=false,col_fill=c_white,col_debug=c_red)`
+绘制多边形
+
+| 参数 | 类型 | 说明 |
+|------|------|------|
+| `points` | [] | 顶点数组，必须是顺时针或者逆时针定义，不能有自交 |
+| `pos_x` | real | 位置x |
+| `pos_y` | real | 位置y |
+| `rot_deg` | real | 旋转角度 |
+| `scl_x` | real | 缩放x |
+| `scl_y` | real | 缩放y |
+| `org_x` | real | 原点x |
+| `org_y` | real | 原点y |
+| `is_debug` | boolean | 是否绘制调试线 |
+| `col_fill` | color | 填充颜色 |
+| `col_debug` | color | 调试线颜色 |
+
+#### `Xpoly_Draw_Inflated(points, pos_x, pos_y, rot_deg, scl_x, scl_y, org_x, org_y, stroke_width, miter_limit, is_debug=false,col_fill=c_white,col_debug=c_red`
+将多边形膨胀（偏置）后三角剖分并绘制。适合用来制作多边形描边
+
+| 参数 | 类型 | 说明 |
+|------|------|------|
+| `points` | [] | 顶点数组，必须是顺时针或者逆时针定义，不能有自交 |
+| `pos_x` | real | 位置x |
+| `pos_y` | real | 位置y |
+| `rot_deg` | real | 旋转角度 |
+| `scl_x` | real | 缩放x |
+| `scl_y` | real | 缩放y |
+| `org_x` | real | 原点x |
+| `org_y` | real | 原点y |
+| `stroke_width` | real | 膨胀宽度(正数为膨胀，负数为收缩) |
+| `miter_limit` | real | 锐角限制，数字越大，允许的锐角越尖锐。超过miter_limit的锐角会被磨平 |
+| `is_debug` | boolean | 是否绘制调试线 |
+| `col_fill` | color | 填充颜色 |
+| `col_debug` | color | 调试线颜色 |
+
+#### `Xpoly_Draw_Buffered_Polygons()`
+
+绘制所有buf_out缓冲区中的多边形。一般你不需要手动调用这个函数，Draw函数里已经自动调用。
+
+#### `Xpoly_Clear_Buffered_Polygons()`
+
+清空多边形缓冲区。一般你不需要手动调用这个函数，Draw函数里已经自动调用。
+
+
+### 布尔运算
+#### `Xpoly_Booleanation(objs)`
+将多变形物体列表objs进行布尔运算，并将结果写入dll内置缓存。
+随后可以使用Xpoly_Collision_Check来进行碰撞检测。
+
+#### `Xpoly_Surface_Boolean(surface1, surface2, surface_helper, op_code)`
+将两个Surface进行布尔运算，并将结果写入surface1。
+**op_code 对照表：**
+
+| 值 | 运算 | 说明 |
+|----|------|------|
+| `0` | Union（并集） | A ∪ B |
+| `1` | Intersection（交集） | A ∩ B |
+| `2` | Difference（差集 A-B） | A - B |
+| `3` | Xor（异或） | A ⊕ B |
+
+
+### 三角剖分
+`triangulation(in*, out*)`
+用法请参考Xpoly_Draw，调用后将把三角形数据储存进buf_out缓冲区
+```gml
+//这个函数绘制输入的多边形
+function Xpoly_Draw(points,pos_x,pos_y,rot_deg,scl_x,scl_y,org_x,org_y,is_debug=false,col_fill=c_white,col_debug=c_red){
+	
+	if(!Xpoly_Is_Initialized()) return;
+	buffer_seek(global.buf_in,buffer_seek_start,0)
+	buffer_write(global.buf_in,buffer_u32,global.buf_cap)
+	buffer_write(global.buf_in,buffer_f32,pos_x)
+	buffer_write(global.buf_in,buffer_f32,pos_y)
+	buffer_write(global.buf_in,buffer_f32,rot_deg)
+	buffer_write(global.buf_in,buffer_f32,scl_x)
+	buffer_write(global.buf_in,buffer_f32,scl_y)
+	buffer_write(global.buf_in,buffer_f32,org_x)
+	buffer_write(global.buf_in,buffer_f32,org_y)
+	buffer_write(global.buf_in,buffer_u32,array_length(points) div 2);
+	for(var i=0;i<array_length(points);i++){
+		buffer_write(global.buf_in,buffer_f32,points[i]);
+	}
+
+	Xpoly_Clear_Buffered_Polygons()
+
+	triangulation(
+		buffer_get_address(global.buf_in),
+		buffer_get_address(global.buf_out)
+	)
+
+	Xpoly_Draw_Buffered_Polygons(is_debug,col_fill,col_debug)
+	
+}
+
+```
+
+
+
+### 碰撞检测
+`Xpoly_Collision_Check(_x,_y,_radius,gravity_angle)`
+支持任意重力方向，可得到是否碰到天花板，地板等等，详情请自行阅读示例。
+
+
+| 参数 | 类型 | 说明 |
+|------|------|------|
+| `_x` | real | 位置x |
+| `_y` | real | 位置y |
+| `_radius` | real | 物体半径 |
+| `gravity_angle` | real | 重力方向 |
