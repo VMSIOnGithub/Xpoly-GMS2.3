@@ -20,23 +20,23 @@ function Xpoly_Draw_Buffered_Polygons(is_debug,col_fill,col_debug){
 		
 		draw_set_color(col_fill)
 		draw_triangle(
-			pt_1_x,
-			pt_1_y,
-			pt_2_x,
-			pt_2_y,
-			pt_3_x,
-			pt_3_y,
+			pt_1_x - 1,
+			pt_1_y - 1,
+			pt_2_x - 1,
+			pt_2_y - 1,
+			pt_3_x - 1,
+			pt_3_y - 1,
 			false
 		);
 		if(is_debug){
 			draw_set_color(col_debug)
 				draw_triangle(
-				pt_1_x,
-				pt_1_y,
-				pt_2_x,
-				pt_2_y,
-				pt_3_x,
-				pt_3_y,
+				pt_1_x - 1,
+				pt_1_y - 1,
+				pt_2_x - 1,
+				pt_2_y - 1,
+				pt_3_x - 1,
+				pt_3_y - 1,
 				true
 			);
 		}

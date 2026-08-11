@@ -46,8 +46,8 @@
   },
   "RoomOrderNodes": [
     {"roomId":{"name":"Room_Init","path":"rooms/Room_Init/Room_Init.yy",},},
-    {"roomId":{"name":"Room4","path":"rooms/Room4/Room4.yy",},},
     {"roomId":{"name":"Room","path":"rooms/Room/Room.yy",},},
+    {"roomId":{"name":"Room4","path":"rooms/Room4/Room4.yy",},},
     {"roomId":{"name":"Room_test","path":"rooms/Room_test/Room_test.yy",},},
   ],
   "Folders": [
