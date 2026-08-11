@@ -30,7 +30,6 @@
 | **膨胀/偏置** | 多边形扩大或缩小指定像素距离，同时输出三角形 |
 | **碰撞检测** | 检测并限制"灵魂" |
 | **仿射变换** | 平移、旋转、缩放多边形 |
-| **碰撞交叉点** | 计算两个多边形碰撞产生的交集多边形 |
 | **点到 Surface** | 将布尔运算/碰撞结果直接写入 Surface 缓冲区用于绘制 |
 
 所有运算均通过 GMS2 的 `buffer_*` 函数与 DLL 进行数据交换，无需文件 I/O。
@@ -56,10 +55,10 @@
 | `Xpoly_Draw_Inflated` | 绘制膨胀后的多边形 |
 | `Xpoly_Draw_Buffered_Polygons` | 绘制缓冲中的多边形 |
 | `Xpoly_Clear_Buffered_Polygons` | 清空缓冲区 |
-| `Shape_Create_Circle` | 创建圆形顶点缓冲区 |
-| `Shape_Create_Rect` | 创建矩形顶点缓冲区 |
-| `Shape_Create_Rect_Rounded` | 创建圆角矩形顶点缓冲区 |
-| `Shape_Create_Star` | 创建星形顶点缓冲区 |
+| `Shape_Create_Circle` | 创建圆形顶点数组 |
+| `Shape_Create_Rect` | 创建矩形顶点数组 |
+| `Shape_Create_Rect_Rounded` | 创建圆角顶点数组 |
+| `Shape_Create_Star` | 创建星形顶点数组 |
 
 ### 3. 创建 init 对象
 
