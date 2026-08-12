@@ -197,13 +197,13 @@ polygon_manager会在游戏中自动收集所有的polygon物体，渲染，并�
 
 #### `Xpoly_Surface_Boolean(surface1, surface2, surface_helper, op_code)`
 将两个Surface进行布尔运算，并将结果写入surface1。
-**op_code 对照表：**
 
+**op_code 对照表：**
 | 值 | 运算 | 说明 |
 |----|------|------|
-| `0` | Union（并集） | A ∪ B |
-| `1` | Intersection（交集） | A ∩ B |
-| `2` | Difference（差集 A-B） | A - B |
+| `0` | XPOLY_OPERATION_UNION（并集） | A ∪ B |
+| `1` | XPOLY_OPERATION_DIFFERENCE（差集 A-B） | A - B |
+| `2` | XPOLY_OPERATION_INTERSECT（交集） | A ∩ B |
 
 
 ### 三角剖分
