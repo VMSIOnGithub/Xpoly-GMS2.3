@@ -27,10 +27,10 @@
 |------|------|
 | **布尔运算** | 并集、交集、差集 |
 | **三角剖分** | 将多边形分解为三角形，用于 GPU 渲染，解决GMS2无法渲染复杂多变形的限制 |
-| **膨胀/偏置** | 多边形扩大或缩小指定像素距离，同时输出三角形 |
+| **膨胀/偏置** | 多边形扩大或缩小指定像素距离，同时输出三角形，适合用于渲染描边/边框 |
 | **碰撞检测** | 检测并限制"灵魂" |
 | **仿射变换** | 多边形可以跟随物体平移、旋转、缩放 |
-| **点到 Surface** | 将布尔运算/碰撞结果直接写入 Surface 缓冲区用于绘制 |
+| **Surface布尔运算** | 以Surface Alpha图为单位进行布尔运算，用于最终的布尔结果绘制 |
 
 所有运算均通过 GMS2 的 `buffer_*` 函数与 DLL 进行数据交换，无需文件 I/O。
 
@@ -235,6 +235,7 @@ function Xpoly_Draw(points,pos_x,pos_y,rot_deg,scl_x,scl_y,org_x,org_y,is_debug=
 `Xpoly_Collision_Check(_x,_y,_radius,gravity_angle)`
 支持任意重力方向，可得到是否碰到天花板，地板等等，详情请自行阅读示例。
 请注意Xpoly_Collision_Check，必须在调用Xpoly_Booleanation，计算出最终边界后才能使用。
+gravity_angle 0时为正下，随着gravity_angle增加逆时针旋转。
 
 | 参数 | 类型 | 说明 |
 |------|------|------|
