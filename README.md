@@ -204,7 +204,6 @@ polygon_manager会在游戏中自动收集所有的polygon物体，渲染，并�
 | `0` | Union（并集） | A ∪ B |
 | `1` | Intersection（交集） | A ∩ B |
 | `2` | Difference（差集 A-B） | A - B |
-| `3` | Xor（异或） | A ⊕ B |
 
 
 ### 三角剖分
