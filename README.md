@@ -6,12 +6,15 @@
 目前只支持GMS2.3.7.606版本,如果有人需要的话会提供其他版本支持。
 
 复杂多边形直接绘制:
+
 <img width="642" height="512" alt="9b809d09-d03e-46d7-ba96-08a2418cb0f2" src="https://github.com/user-attachments/assets/9c8989d2-7cda-4b73-a41b-6cfb19cfaceb" />
 
 三角化debug显示:
+
 <img width="642" height="512" alt="47f75fe8-ea41-48ea-bce2-234f7914151b" src="https://github.com/user-attachments/assets/ae68381c-d792-4fe7-b7fe-70afe9f78174" />
 
 DrawInflated函数实现描边:
+
 <img width="642" height="512" alt="8546064f-d242-425e-975a-75bd24fcada8" src="https://github.com/user-attachments/assets/87392570-9eb3-4d70-aaa0-8517153a3f3c" />
 
 
