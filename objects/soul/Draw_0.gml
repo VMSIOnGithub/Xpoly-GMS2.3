@@ -10,4 +10,4 @@ switch(soul_mode){
 		break;
 }
 
-draw_sprite_ext(spr_soul,0,x+1,y+1,1,1,soul_gravity_angle,soul_col,1)
+draw_sprite_ext(spr_soul,0,x,y,1,1,soul_gravity_angle,soul_col,1)
