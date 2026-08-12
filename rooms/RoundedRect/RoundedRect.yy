@@ -24,9 +24,9 @@
   "creationCodeFile": "",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_101AE911","path":"rooms/Room/Room.yy",},
-    {"name":"inst_207BF01B","path":"rooms/Room/Room.yy",},
-    {"name":"inst_3C94C14E","path":"rooms/Room/Room.yy",},
+    {"name":"inst_101AE911","path":"rooms/RoundedRect/RoundedRect.yy",},
+    {"name":"inst_207BF01B","path":"rooms/RoundedRect/RoundedRect.yy",},
+    {"name":"inst_3C94C14E","path":"rooms/RoundedRect/RoundedRect.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
@@ -54,7 +54,7 @@
     "path": "folders/Rooms.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Room",
+  "name": "RoundedRect",
   "tags": [],
   "resourceType": "GMRoom",
 }
