@@ -18,7 +18,6 @@ with(soul){
 	soul_touching_ceiling = result[2]
 	soul_touching_floor = result[3]
 	
-	show_debug_message(result)
 }
 
 
